@@ -1,0 +1,16 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+
+.app {
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.tabs {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+}

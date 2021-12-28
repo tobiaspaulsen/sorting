@@ -1,0 +1,14 @@
+.bar-wrapper {
+  height: 100%;
+  width: 100%;
+  margin: 1px;
+}
+
+.bar {
+  transition: 0.1s;
+  width: 100%;
+  position: relative;
+  top: 100%;
+  transform: translateY(-100%);
+  color: rgb(104, 104, 104);
+}

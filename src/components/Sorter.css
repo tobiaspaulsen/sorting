@@ -1,0 +1,79 @@
+.sorter {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* margin: 20px; */
+}
+
+.frame {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* border: 2px solid; */
+  max-width: 1200px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+}
+
+.bars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 1%;
+}
+
+.control-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  width: 100%;
+  padding: 0 4%;
+  /* margin: auto;
+  max-width: 100px; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.control-buttons button {
+  margin: 0 10px;
+  border: 2px solid;
+  border-radius: 100%;
+  cursor: pointer;
+  background: transparent;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button p {
+  color: rgba(0, 0, 0, 0.7);
+  margin: 5px 0;
+}
+.slider p {
+  font-size: 18px;
+  margin: 18px 0;
+}
+
+.slider {
+  color: rgba(0, 0, 0, 0.7);
+}
