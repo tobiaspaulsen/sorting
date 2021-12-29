@@ -137,8 +137,9 @@ class Sorter extends Component {
       this.state.currentStep + 1 >= this.state.steps.length
     )
       this.generateArray();
-    else this.clearTimeouts();
-
+    else {
+      this.clearTimeouts();
+    }
     let steps = this.state.steps;
 
     let timeouts = [];
@@ -189,12 +190,12 @@ class Sorter extends Component {
       );
     };
     const delayChange = (event, newValue) => {
-      this.setState({
-        delay: 1500 - newValue,
-      });
-      if (this.state.playing) {
-        this.play();
-      }
+      this.setState(
+        {
+          delay: 1500 - newValue,
+        },
+        () => this.clearTimeouts()
+      );
     };
 
     const bars = this.state.array.map((val, i) => (
@@ -237,7 +238,7 @@ class Sorter extends Component {
         </div>
         <div className="control-panel">
           <div className="slider">
-            <p>N size</p>
+            <h2>Number of bars:</h2>
             <Slider
               onChange={nChange}
               marks={nMarks}
@@ -250,36 +251,36 @@ class Sorter extends Component {
           </div>
           <div className="control-buttons">
             <div className="button">
-              <p>{'"\u21E6"'}</p>
+              <h3>{'"\u21E6"'}</h3>
               <button onClick={this.backward}>
                 <Backward sx={{ fontSize: 40 }} />
               </button>
             </div>
             <div className="button">
-              <p>space</p>
+              <h3>space</h3>
               {playPause}
             </div>
             <div className="button">
-              <p>"R"</p>
+              <h3>"R"</h3>
               <button onClick={this.generateArray}>
                 <Replay sx={{ fontSize: 40 }} />
               </button>
             </div>
             <div className="button">
-              <p>{'"\u21e8"'}</p>
+              <h3>{'"\u21e8"'}</h3>
               <button onClick={this.forward}>
                 <Forward sx={{ fontSize: 40 }} />
               </button>
             </div>
           </div>
           <div className="slider">
-            <p>Speed</p>
+            <h2>Speed:</h2>
             <Slider
               onChange={delayChange}
               marks={delayMarks}
               min={0}
               max={1490}
-              step={10}
+              step={100}
               defaultValue={1000}
             />
           </div>

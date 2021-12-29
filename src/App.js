@@ -3,6 +3,7 @@ import React from "react";
 import Sorter from "./components/Sorter";
 
 import { Tabs, Tab } from "@mui/material";
+import Measure from "react-measure";
 
 import "./App.css";
 
@@ -24,23 +25,40 @@ export default function App() {
     sorterElem.current.changeAlgorithm(val);
   };
 
+  const [width, setWidth] = React.useState(null);
+
   return (
     <div className="app">
       <div className="tabs">
-        <Tabs
-          variant="fullWidth"
-          value={value}
-          onChange={handleChange}
-          textColor="primary"
-          indicatorColor="primary"
-          centered={true}
+        <Measure
+          bounds
+          onResize={(contentRect) => {
+            setWidth(contentRect.bounds.width);
+          }}
         >
-          {algorithms.map((alg, i) => (
-            <Tab key={i} label={alg} value={alg} />
-          ))}
-        </Tabs>
+          {({ measureRef }) => (
+            <div ref={measureRef}>
+              <Tabs
+                variant={width < 600 ? "scrollable" : "fullWidth"}
+                centered={width > 600}
+                scrollButtons="auto"
+                allowScrollButtonsMobile
+                value={value}
+                onChange={handleChange}
+                textColor="primary"
+                indicatorColor="primary"
+              >
+                {algorithms.map((alg, i) => (
+                  <Tab key={i} label={alg} value={alg} />
+                ))}
+              </Tabs>
+            </div>
+          )}
+        </Measure>
       </div>
       <Sorter ref={sorterElem} />
+
+      <a href="https://github.com/tobiaspaulsen/sorting">Github repository</a>
     </div>
   );
 }

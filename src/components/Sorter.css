@@ -2,27 +2,26 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  /* margin: 20px; */
 }
 
 .frame {
-  margin: 20px auto;
+  margin: 15px auto;
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  /* border: 2px solid; */
   max-width: 1200px;
   background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .bars {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  padding: 20px;
+  height: 550px;
+  padding: 5px;
   width: 100%;
   border-radius: 1%;
 }
@@ -44,11 +43,6 @@
 .slider {
   width: 100%;
   padding: 0 4%;
-  /* margin: auto;
-  max-width: 100px; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .control-buttons button {
@@ -65,15 +59,33 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-.button p {
+.button h3 {
+  font-size: 14px;
+  font-weight: normal;
   color: rgba(0, 0, 0, 0.7);
   margin: 5px 0;
 }
-.slider p {
+.slider h2 {
+  font-weight: normal;
   font-size: 18px;
   margin: 18px 0;
 }
 
 .slider {
   color: rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 800px) {
+  .control-panel {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  .slider {
+    margin: auto;
+    width: 70%;
+    padding: 0 4%;
+  }
 }

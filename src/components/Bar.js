@@ -10,7 +10,7 @@ function Bar({ value, color, numberOfBars }) {
     "rgba(255, 48, 79, 1)", // 1: Red for swaps
     "rgb(255, 174, 0)", // 2: Orange for traversing
     "rgb(255, 252, 57)", // 3: Yellow for indicating
-    `rgba(0, ${g}, ${b}, 0.2)`, // 4: Inactive
+    `rgba(0, ${g}, ${b}, 0.25)`, // 4: Inactive
     "rgb(161, 62, 138)", // 5: Purple
     `rgba(${b * 0.8}, 50, ${g / 1.2}, 1)`, // 6: Alternative
   ];
