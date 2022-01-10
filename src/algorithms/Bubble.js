@@ -1,13 +1,13 @@
 import { swap } from "./Helpers";
 
-const bubble = (array, arraySteps, colorSteps) => {
+const bubble = (arr, arraySteps, colorSteps) => {
   const standardColors = colorSteps[0].slice();
   let colorCopy;
 
-  for (let i = 0; i < array.length - 1; i++) {
-    for (let j = 0; j < array.length - i - 1; j++) {
-      if (array[j] > array[j + 1]) {
-        array = swap(array, j, j + 1);
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        arr = swap(arr, j, j + 1);
         arraySteps.push(array.slice());
         colorCopy = standardColors.slice();
         colorCopy[j] = 1;
@@ -21,11 +21,11 @@ const bubble = (array, arraySteps, colorSteps) => {
         colorSteps.push(colorCopy);
       }
     }
-    standardColors[array.length - i - 1] = 4;
-    arraySteps.push(array.slice());
+    standardColors[arr.length - i - 1] = 4;
+    arraySteps.push(arr.slice());
     colorSteps.push(standardColors.slice());
   }
-  arraySteps.push(array.slice());
+  arraySteps.push(arr.slice());
   colorSteps.push(colorSteps[0].slice());
 };
 
